@@ -340,6 +340,9 @@ public class MainActivity extends AppCompatActivity {
 
                 else{
                     if(queue.peek().result < 0.4){
+                        if(StringSimilarity.similarity(input, "Good bye banking companion") > 0.5) {
+                            finish();
+                        }
                         String[] notUnderstand = {"I cannot understand", "uh huh?", "You must be kidding me.", "Can you please repeat again?", "I was not listening just now."};
                         output = notUnderstand[new Random().nextInt(5)];
                         displayText(output);
