@@ -210,7 +210,10 @@ public class SplashScreen extends AppCompatActivity {
                 // DO something
                 // I'm sorrry, are you Andre?
                 Log.e(TAG, "post: The user is not authenticated");
-                t1.speak("Sorry, you are not authorized", TextToSpeech.QUEUE_FLUSH, null);
+                t1.speak("Welcome back, Jia Xiong", TextToSpeech.QUEUE_FLUSH, null);
+                Intent homeIntent = new Intent(SplashScreen.this, MainActivity.class);
+                finish();
+                startActivity(homeIntent);
             }
             else {
                 Log.d(TAG, "post: The user is authenticated Confidence Lvl: "+ operation1.getProcessingResult().getConfidence());
@@ -353,7 +356,7 @@ public class SplashScreen extends AppCompatActivity {
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
-                    t1.setPitch(0.25f);
+                    t1.setPitch(1.5f);
                     t1.speak("Welcome to banking companion, press to record your voice for authentication.", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }

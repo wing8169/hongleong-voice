@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
-                    t1.setPitch(0.25f);
+                    t1.setPitch(1.5f);
                 }
             }
         });
